@@ -3,3 +3,5 @@
 可以监听整个页面，也可以监听页面中的某个 Element，当有链接进入视口范围，就会去 prefetch。
 
 主要原理是动态插入 `<link rel="prefetch">` 标签。
+
+[demo](http://nikolausliu.top/quicklink-demo/)
