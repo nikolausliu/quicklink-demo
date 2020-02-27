@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>quicklink-normal</title>
+  </head>
+  <body>
+    <a href="/quicklink-demo/about.html">about</a>
+    <div style="width: 500px; height: 2000px; background: yellowgreen;">
+      打开控制台 Element 面板可以看到 head 标签里新增了 link prefetch 标签
+      请求了 about 页面
+      <br />
+      <br />
+      查看 Network 面板，也能看到请求了 about 页面
+      <br />
+      <br />
+      一边滚动鼠标滚轮，一边注意观察 Element 面板，当背景色结束，news
+      链接进入视线，可以看到 head 里插入了新的 link prefetch 标签
+    </div>
+    <a href="/quicklink-demo/news.html">news</a>
+    <script src="http://unpkg.com/quicklink"></script>
+    <script>
+      window.addEventListener('load', () => {
+        console.log(quicklink)
+        quicklink.listen()
+      })
+    </script>
+  </body>
+</html>

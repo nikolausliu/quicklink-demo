@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>quicklink-in-element</title>
+  </head>
+  <body>
+    <a href="/quicklink-demo/contact.html">contact</a>
+    <div
+      id="container"
+      style="width: 500px; height: 500px; overflow: auto; background: yellowgreen;"
+    >
+      <a href="/quicklink-demo/about.html">about</a>
+      <div style="height: 600px;">
+        查看 Element 面板 和 Network 面板，只有 about.html 的
+        prefetch，而没有contact.html 的 prefetch。
+        <br />
+        这是因为，quicklink只监听了 yellowgreen 区域，about.html 不在其中。
+        <br />
+        鼠标滚轮向下滚动，当 news 出现，news 的 prefetch 随之出现
+      </div>
+      <a href="/quicklink-demo/news.html">news</a>
+    </div>
+    <script src="http://unpkg.com/quicklink"></script>
+    <script>
+      window.addEventListener('load', () => {
+        quicklink.listen({
+          el: document.getElementById('container'),
+        })
+      })
+    </script>
+  </body>
+</html>
